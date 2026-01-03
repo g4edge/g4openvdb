@@ -21,6 +21,11 @@ endif()
 include(${Geant4_USE_FILE})
 
 #----------------------------------------------------------------------------
+# OpenVDB
+# (-DCMAKE_MODULE_PATH=/opt/homebrew/opt/openvdb/lib/cmake/OpenVDB/)
+find_package(OpenVDB REQUIRED)
+
+#----------------------------------------------------------------------------
 # Locate sources and headers for this project
 #
 include_directories(${PROJECT_SOURCE_DIR}/include
@@ -32,7 +37,8 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 # Add the executable, and link it to the Geant4 libraries
 #
 add_executable(g4openvdb g4openvdb.cc ${sources} ${headers})
-target_link_libraries(g4openvdb ${Geant4_LIBRARIES} )
+target_link_libraries(g4openvdb ${Geant4_LIBRARIES} OpenVDB::openvdb)
+
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we

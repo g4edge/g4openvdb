@@ -7,6 +7,7 @@
 
 #include "DetectorConstruction.hh"
 #include "ActionInitialization.hh"
+#include "NanoVDB.hh"
 
 int main(int argc, char** argv)
 {
@@ -26,6 +27,9 @@ int main(int argc, char** argv)
 
   // Set number of threads
   runManager->SetNumberOfThreads(numberofGeant4Cores);
+
+  // Create NanoVDB object
+  auto nanoVDB = NanoVDB();
 
   // GDML parser
   G4GDMLParser parser;
