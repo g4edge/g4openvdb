@@ -30,6 +30,7 @@ int main(int argc, char** argv)
 
   // Create NanoVDB object
   auto nanoVDB = NanoVDB();
+  nanoVDB.Fill(0,0,1,10);
 
   // GDML parser
   G4GDMLParser parser;

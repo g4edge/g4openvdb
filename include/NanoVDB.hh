@@ -1,12 +1,9 @@
 #pragma once
 
 #include <nanovdb/NanoVDB.h>
-#include <nanovdb/tools/GridBuilder.h>
+#include <nanovdb/util/GridBuilder.h>
 #include <nanovdb/tools/CreatePrimitives.h>
 
-using ValueT = float;
-using GridT = nanovdb::NanoGrid<ValueT>;
-// using BuilderT = nanovdb::tools::GridBuilder<ValueT>;
 
 class NanoVDB {
 public:
@@ -15,5 +12,5 @@ public:
   void Fill(float x, float y, float z, float v);
 
 private:
-  const GridT* grid;
+
 };
